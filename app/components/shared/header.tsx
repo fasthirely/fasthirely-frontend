@@ -1,10 +1,14 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Header() {
-  const goToSearch = () => {
-    router.push('/login?keyword=developer&location=india');
+  const router = useRouter();
+  const goToLogin = (loginType: string) => {
+    // router.push('/login?keyword=developer&location=india');
+    router.push(`/login?loginType=${loginType}`);
+
+
   };
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
@@ -18,8 +22,8 @@ export default function Header() {
               </a>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
-              <a href="#jobs" className="text-gray-700 hover:text-[#592c93] transition" onClick={goToLogin}>seekar</a>
-              <a href="#companies" className="text-gray-700 hover:text-[#592c93] transition">HR</a>
+              <a  className="text-gray-700 hover:text-[#592c93] transition" onClick={() => goToLogin('seeker')}>seekar</a>
+              <a href="#companies" className="text-gray-700 hover:text-[#592c93] transition" onClick={() => goToLogin('recruiter')}>HR</a>
               <a href="#about" className="text-gray-700 hover:text-[#592c93] transition">About</a>
               <a href="/contact" className="text-gray-700 hover:text-[#592c93] transition">Contact</a>
               <button className="bg-[#592c93] text-white px-4 py-2 rounded-lg hover:bg-[#4a2578] transition">
