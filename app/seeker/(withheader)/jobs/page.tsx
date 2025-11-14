@@ -3,6 +3,7 @@
 import SearchBar from "@/app/components/seekar/searchbar";
 import { useRouter } from 'next/navigation';
 import Filters from "@/app/components/seekar/filters";
+import JobCard from "@/app/components/seekar/jobcard";
 // import JobsList from "@/app/components/seekar/jobs";
 
 export default function Jobs() {
@@ -58,7 +59,10 @@ export default function Jobs() {
           <div className="lg:col-span-3">
             <div className="bg-white rounded-lg shadow-md p-6">
               <h1 className="text-2xl font-bold text-gray-800">Jobs List</h1>
-              <p className="text-gray-600 mt-2">Job listings will appear here</p>
+              <p className="text-gray-600 mb-5">Job listings will appear here</p>
+              <JobCard id="1" title="Software Engineer" company="Google" location="San Francisco, CA" jobType="full-time" salary="100,000" postedDate="2021-01-01" experience="3 years" description="We are looking for a software engineer with 3 years of experience in React.js and Node.js." skills={["React.js", "Node.js", "JavaScript", "HTML", "CSS"]} />
+              <JobCard id="2" title="Software Engineer" company="Google" location="San Francisco, CA" jobType="full-time" salary="100,000" postedDate="2021-01-01" experience="3 years" description="We are looking for a software engineer with 3 years of experience in React.js and Node.js." skills={["React.js", "Node.js", "JavaScript", "HTML", "CSS"]} />
+              <JobCard id="3" title="Software Engineer" company="Google" location="San Francisco, CA" jobType="full-time" salary="100,000" postedDate="2021-01-01" experience="3 years" description="We are looking for a software engineer with 3 years of experience in React.js and Node.js." skills={["React.js", "Node.js", "JavaScript", "HTML", "CSS"]} />
             </div>
           </div>
         </div>
