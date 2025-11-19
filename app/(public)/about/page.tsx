@@ -1,4 +1,19 @@
+'use client';
+
+import { setUserData, getUserData, clearUserData } from '@/lib/crypto';
+
 export default function AboutUs() {
+  setUserData({
+    token: '8743374',
+    role: 'seeker', // 'seeker' or 'recruiter'
+    userId: '8743374',
+    email: 'test@test.com',
+    name: 'Test User',
+    // ... any other user data you need
+  });
+  setTimeout(() => {
+    console.log(getUserData());
+  }, 3000);
   return (
     <div className="min-h-screen bg-white font-sans">
       {/* Header - Logo Only */}
